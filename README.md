@@ -1,2 +1,2 @@
-# GMC-FS-JS_Checkpoints
+# GMC-FSJS_Checkpoints
 GMC checkpoints, exercises and works
