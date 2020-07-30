@@ -1,0 +1,52 @@
+/*Dot product - using procedures (first part)
+-----------------------------------------------
+1. Write a procedure, called dot_product which calculates in the variable ps, the dot(scalar) product of v1 and v2 (v1 and v2 are vectors of IR)
+2. Write an algorithm which determines, for n pairs of given vectors, whether two vectors of given IR are orthogonal, by calling the procedure defined in the previous question. The dot product of two orthogonal vectors is zero.
+
+3. ... this question is done --> in the second part.
+*/
+
+PROCEDURE fillVector(VAR v: ARRAY_OF INTEGER, N: INTEGER)
+VAR
+    i: INTEGER;
+BEGIN
+    FOR i FROM 0 TO N-1 DO
+        Write("v[",i+1,"]= ");
+        Read(v[i]);
+    END_FOR
+END
+
+//1) Procedure dot_product
+PROCEDURE dot_product(v1, v2: ARRAY_OF INTEGER, N: INTEGER, VAR ps: INTEGER)
+VAR
+BEGIN
+    ps := 0;
+    FOR i FROM 0 TO N-1  DO
+        ps += v1[i]*v2[i];
+    END_FOR
+END
+
+//2) Algorithm determining if pairs of given vectors are orthogonal or not
+ALGORITHM dot_product_of_two_vectors
+VAR
+    v1, v2: ARRAY_OF INTEGER[30];
+    N, dot: INTEGER;
+BEGIN
+    REPEAT
+        Write("Give dimension N of two vectors v1 and v2 : ");
+        Read(N);
+    UNTIL (N>=1 && N <=30);
+
+    Write("Give elements of v1: ")
+    fillVector(v1, N);
+    Write("Give elements of v2: ")
+    fillVector(v2, N);
+
+    dot_product(v1, v2, N, dot);
+    Write("Scalar product of v1 and v2 is ", dot);
+    IF (dot <> 0) THEN
+        Write("Given vectors v1 and v2 are not orthogonal.");
+    ELSE
+        Write("Given vectors v1 and v2 are orthogonal.");
+    END_IF
+END
