@@ -1,0 +1,43 @@
+/*Is palindrome
+----------------
+Description: 
+Test if a word is a palindrome. A word is a palindrome if only if it can be read from left to right or from right to left: gag; kayak; php; radar;....
+
+Instructions:
+ 1 Breakdown of the processing: we compare the characters located at the ends of the word:
+    * if equality we test the rest of the word
+    * if difference we stop
+ 2 Stop condition: an empty word or a word containing a single character is a palindrome.
+*/
+
+FUNCTION isPalindrome(str: STRING, start, end: INTEGER) : BOOLEAN
+VAR
+    set_declarations
+BEGIN
+    IF (str.length = 1 OR str.length = 0 OR end <= start) THEN
+        return True;
+    ELSE_IF (str[start] = str[end]) THEN
+        isPalindrome(str, start+1, end-1);
+    ELSE
+        RETURN false;
+    END_IF
+END
+
+ALGORITHM verify_if_string_is_palindrome
+VAR
+    str: STRING[30];
+    B: BOOLEAN;
+    start, end: INTEGER;
+BEGIN
+    REPEAT
+        write("Give a word to test (< 30 car.) : ");
+        read(str);
+    UNTIL (str.length <= 30);
+    start := 0; end := str.length-1;
+    B := isPalindrome(str, start, end);
+    IF (B) THEN
+        write("The word ", str, " is a palindrome");
+    ELSE
+        write("The word ", str, " isn't a palindrome.");
+    END_IF
+END
