@@ -1,0 +1,63 @@
+/*Insertion sort
+------------------
+Description: 
+Insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands. Each time we take a new card we put it in the right place in our hand. 
+
+Instructions:
+    1. Each time work only with the first i-1 element from of the array
+    2. Pick element arr[i] and insert it into sorted sequence in the array from 0 to i-1.
+*/
+
+PROCEDURE InsertionSort(VAR arr: ARRAY_OF INTEGER, N: INTEGER)
+VAR
+    i, j, temp: INTEGER;
+BEGIN
+    FOR i FROM 1 TO N-1 DO
+        temp := arr[i];
+        j := i-1;
+        WHILE (j>=0 && arr[j]>temp) DO
+            arr[j+1] := arr[j];
+            j := j-1;
+        END_WHILE
+        arr[j+1] := temp;
+    END_FOR
+END
+
+PROCEDURE fillArray(VAR arr: ARRAY_OF INTEGER, N: INTEGER)
+VAR
+    i: INTEGER;
+BEGIN
+    FOR i FROM 0 TO N-1 DO
+        Write("arr[",i+1,"]= ");
+        Read(arr[i]);
+    END_FOR
+END
+
+PROCEDURE viewArray(arr: ARRAY_OF INTEGER, N: INTEGER)
+VAR
+    i: INTEGER;
+BEGIN
+    FOR i FROM 0 TO N-1  DO
+        Write(arr[i], " ");
+    END_FOR
+END
+
+ALGORITHM insertion_sort_algorithm
+VAR
+    arr: ARRAY_OF INTEGER[30];
+    N: INTEGER;
+BEGIN
+    REPEAT
+        Write("Give a dimension of array : ");
+        Read(N);
+    UNTIL (N>=1 && N <=30);
+
+    Write("Give elements of array: ");
+    fillArray(arr, N);
+
+    Write("Array before sorting: ");
+    viewArray(arr, N);
+    InsertionSort(arr, N);
+    Write("Array after sorting with insertion sort: ");
+    viewArray(arr, N);
+END
