@@ -1,0 +1,102 @@
+/*Tree basic operations
+-------------------------
+Description: 
+We want to develop the basic operation that we need with any tree, we will work here with binary trees.
+1. Write a function that gives the number of nodes in the tree.
+2. Write a function that gives the height of a tree.
+3. Write a function that gives the number of leaves in the tree.
+4. Write a function that gives the maximum value in the tree.
+5. Write a function to test if the tree is a full binary tree.
+
+Note: Think recursively, do not forget about base case. 
+*/
+
+//Structure of Binary Tree (BT) Elements
+    BT :	STRUCT
+                x : INTEGER;
+                LC : ^BT;
+                RC : ^BT;
+            END_STRUCT
+
+//1) Number of nodes
+FUNCTION CountNodes(root: ^BT) : INTEGER
+VAR
+    nbr: INTEGER; nbr := 0;
+BEGIN
+    IF (root <> NULL) THEN
+        nbr++;
+        CountNodes(root^.LC);
+        CountNodes(root^.RC);
+    END_IF
+    RETURN nbr;
+END
+
+//2) Height of tree
+FUNCTION HeightTree(root: ^BT) : INTEGER
+VAR
+    leftHeight, rightHeight: INTEGER;
+BEGIN
+    IF (root = NULL) THEN
+        RETURN 0;
+    ELSE
+        leftHeight := HeightTree(BT^.LC);
+        rightHeight :=  HeightTree(BT^.RC);
+        IF (leftHeight > rightHeight) THEN
+            return leftHeight +1 ;
+        ELSE
+            return rightHeight +1;
+        END_IF
+    END_IF
+END
+
+//3) Number of leaves
+FUNCTION CountLeaves(root: ^BT) : INTEGER
+BEGIN
+    IF (root = NULL) THEN
+        RETURN 0;
+    ELSE
+        IF (root^.LC = NULL AND root^.RC = NULL ) THEN
+            RETURN 1;
+        ELSE
+            RETURN CountLeaves(root^.LC) + CountLeaves(root^.RC) ;
+        END_IF
+    END_IF
+    
+END
+
+//4) Maximum value
+FUNCTION MaxValue(root: ^BT) : INTEGER
+VAR
+    leftValue, rightValue, max: INTEGER;
+BEGIN
+    IF (root = NULL) THEN
+        RETURN 0;
+    ELSE
+        max := BT^.x;
+        leftValue := MaxValue(BT^.LC);
+        rightValue :=  MaxValue(BT^.RC);
+        IF (leftValue > max) THEN
+            max := leftValue;
+        END_IF
+        IF (rightValue > max) THEN
+            max := rightValue;
+        END_IF
+    END_IF
+    RETURN max;
+END
+
+//5) If a tree is full Binary Tree (FBT)
+FUNCTION FBT(root: ^BT) : BOOLEAN
+VAR
+    set_declarations
+BEGIN
+    IF (root = NULL) THEN
+        RETURN TRUE;
+    ELSE_IF (root^.LC = NULL AND root^.RC = NULL) THEN
+        RETURN TRUE;
+    ELSE_IF (root^.LC <> NULL AND root^.RC <> NULL) THEN
+        RETURN FBT(root^.LC) AND FBT(root^.RC <> NULL);
+    ELSE
+        RETURN FALSE;
+    END_IF
+END
