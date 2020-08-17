@@ -1,0 +1,56 @@
+/* Note:
+----------
+First, I made this file to facilitate make of css styles;
+Than I don't use it, because the exercise need inline styling passed 
+via props. For that reason, I modified it to meet JSX synthax and putted it 
+in 'App.js' file. 
+After that, props styles are passed to 'ProductTable.js' file.
+
+Note: it is possible to use this file by activating some comments line here 
+and in 'ProductTable.js' file*/
+
+/*
+h1 {
+    font-family: Tahoma;
+    font-size: 2em;
+    color:  #8c2323;
+}
+
+table {
+    font-family: Tahoma;
+    border-collapse: collapse;
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+table, th, td {
+    text-align: center;
+    border: 3px solid #dac2c2;
+    padding: 15px;
+}
+
+th {
+    height: 45px;
+    font-size: 1.3em;
+    color: #f9dbdb;
+    background-color: #8c2323;
+}
+
+td {
+    height: 30px;
+    font-size: 1.2em;
+}
+*/
+
+/*This is placed in 'App.css' folder*/
+/*
+tr:nth-child(even) {
+    background-color: #dedede;
+}
+*/
+/*------------------------------------*/
+
+
+
+
