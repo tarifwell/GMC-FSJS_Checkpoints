@@ -1,0 +1,16 @@
+Note:
+-----
+
+In this directory you will find:
+- 1 folder: "my-first-app"
+
+This folder doesn't include React (and Bootstrap) installation folders (node_modules), it contains only files and folders I've used.
+To use this folder, copy all the files into a React project.
+
+- 1 compressed file: "my-first-app.rar"
+
+This file include the orignal work.
+If the previous folder doesn't work or has some problems, please try the compressed file. 
+Problems may occur when doing "git add"... 
+
+Thanks.

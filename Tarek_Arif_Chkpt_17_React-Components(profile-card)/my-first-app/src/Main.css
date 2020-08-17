@@ -1,0 +1,49 @@
+.App {
+    width: 80%;
+    border: 3px dashed darkgreen;
+    border-radius: 50px;
+    margin: 50px auto;
+    background-color:#faffec;
+}
+
+img {
+    width: 300px;
+    border-radius: 100%;
+    box-shadow:  5px 10px 18px #888888;
+    margin: 50px;
+}
+
+h2 {
+    font-family: 'Segoe UI', Tahoma;
+    color: darkgreen;
+    width: 450px;
+    margin: auto;
+    padding-bottom: 15px;
+    border-bottom: 10px solid orange;
+}
+
+h4 {
+    font-family: 'Segoe UI', Tahoma;
+    color: rgb(9, 85, 2);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly ;
+    padding: 0px;
+}
+
+li {
+    margin: 10px;
+    font-size: 1.2em ;
+    
+
+}
+
+span {
+    font-weight: bolder;
+    color: rgb(61, 59, 59);
+}
