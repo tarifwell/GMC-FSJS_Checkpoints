@@ -17,7 +17,7 @@ function ProductTable(props){
             <tbody>
                 {props.elements.map((elt, index) => {
                     return (
-                        <tr key={index}>
+                        <tr style={(index+1)%2===0 ? props.styles.styleTr_even : {}} key={index}>
                             <td  style={props.styles.styleTd}>{elt.name}</td>
                             <td  style={props.styles.styleTd}>{elt.category}</td>
                             <td  style={props.styles.styleTd}>{elt.price} DTN</td>
@@ -30,7 +30,7 @@ function ProductTable(props){
     );
 }
 
-ProductTable.propTypes = { //need help
+ProductTable.propTypes = {      //need help
     elements: PropTypes.array.isRequired,
     styles: PropTypes.object
 }

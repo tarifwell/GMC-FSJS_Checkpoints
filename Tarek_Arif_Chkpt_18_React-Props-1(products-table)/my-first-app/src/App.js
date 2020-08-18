@@ -49,7 +49,7 @@ const styleTd = {
   ...style3Elts_table_th_td
 };
 
-const styleTr_even = {backgroundColor: '#dedede'}; //not used (need help)
+const styleTr_even = {backgroundColor: '#dedede'}; //made with condition
 
 function App() {
   return (
