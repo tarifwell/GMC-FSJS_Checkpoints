@@ -1,0 +1,72 @@
+/* Note:
+----------
+I made This css file, then I replaced it by the inline styles 
+accroding to the request of the exercise. But this file is still valid.
+
+Note: it is possible to use this file by activating some comments line here 
+and in 'Profile.js' file*/
+
+/*.App {
+    width: 80%;
+    border: 3px dashed darkgreen;
+    border-radius: 50px;
+    margin: 50px auto;
+    background-color:#faffec;
+}
+
+h1 {
+    font-family: 'Segoe UI', Tahoma;
+    color: darkgreen;
+    padding-bottom: 15px;
+}
+
+.portraitBlock {
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    flex-wrap: wrap;
+}
+
+.sectionPart {
+    width: 200px;
+    margin: 50px auto;
+    text-align: justify;
+    padding: 10px;
+}
+
+img {
+    width: 100%;
+    margin-top: 100px;
+    border-radius: 100%;
+    box-shadow:  5px 10px 18px #888888;
+}
+
+h2 {
+    font-family: 'Segoe UI', Tahoma;
+    color: darkgreen;
+    padding-bottom: 15px;
+    border-bottom: 10px solid orange;
+}
+
+span {
+    font-weight: bolder;
+    color: rgb(61, 59, 59);
+}
+
+button {
+    font-family: 'Segoe UI', Tahoma;
+    font-size: 1.2em;
+    font-weight: bolder;
+    color: rgb(9, 85, 2);
+    margin: 20px auto;
+    border: 3px solid rgb(9, 85, 2);
+    border-radius: 12px;
+    padding: 10px;
+    outline: none;
+}
+
+button:hover {
+    background-color:#40bf35;
+    color: white;
+}*/
+
