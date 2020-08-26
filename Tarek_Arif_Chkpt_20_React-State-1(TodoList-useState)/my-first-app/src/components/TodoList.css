@@ -1,0 +1,90 @@
+.App {
+    font-family: Tahoma;
+    text-align: center;
+    margin: 0px;
+    min-width: 250px;
+    background-color: #72b4ff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    
+}
+
+.bodyBox {
+    font-size: 14px;
+    max-width: 550px;
+    margin: auto;
+}
+
+.headBox {
+    text-align: center;
+    color: white;
+    background-color: #005f8a;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 3px solid lightyellow;
+    
+}
+
+input {
+    margin: 5px 15px 5px 15px;
+    border-radius: 8px;
+    width: 300px;
+    padding: 10px;
+}
+
+.addBtn {
+    font-weight: bold;
+    color: #555;
+    margin: 5px 15px 5px 15px;
+    padding: 10px;
+    background: #d9d9d9;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.addBtn:hover {
+    background-color: #bbb;
+}
+
+ul {
+    list-style-type: none;
+    text-align: left;
+    margin: 0px;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+ul li{
+    padding: 10px 10px 10px 40px;
+    background: lightgrey;
+    border-top: 3px solid lightyellow;
+    border-bottom: 3px solid lightyellow;
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete {
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 5px 10px;
+}
+
+.delete:hover {
+    background-color: #005f8a;
+    color: white;
+}
+
+.tempbtn {
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.tempbtn:hover {
+    background-color: #005f8a;
+    color: white;
+}
+
+
