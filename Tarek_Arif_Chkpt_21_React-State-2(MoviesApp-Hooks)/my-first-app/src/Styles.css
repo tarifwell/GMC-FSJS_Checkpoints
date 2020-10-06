@@ -1,0 +1,47 @@
+.App-header {
+    min-height: 30vh;
+    margin-bottom: 20px;
+    border-bottom: 10px solid #cbd3e3;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+.addBtnStyle {
+    margin: 20px;
+    margin-bottom: 50px;
+}
+
+img {
+    width: 190px;
+    height: 270px;
+    border-radius: 17px !important;
+
+}
+
+.col-sm{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    border-radius: 17px;
+    margin: 10px;
+}
+
+h5 {
+    background-color: #cbd3e3;
+    height: 1.5em;
+    border-radius: 17px;
+    width: 100%;
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    margin-top: 100px;
+    animation-delay: 2s;
+}
+
