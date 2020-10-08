@@ -1,0 +1,81 @@
+.App {
+    background-color: rgb(180, 180, 180);
+}
+
+header {
+    min-height: 15vh;
+    margin-bottom: 20px;
+    border-bottom: 10px solid #f7f7f7;
+}
+
+h1 {
+    margin-bottom: 25px;
+    color: #f7f7f7;
+}
+
+.col-sm{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    border-width: 4px;
+    border-radius: 17px;
+    margin: 10px;
+}
+
+.bodyTop {
+    padding: 10px;
+    text-align: left;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    
+}
+
+img, .card-img-top {
+    width: 80px ;
+    height: 80px;
+    border-radius: 50px !important;
+    margin: 10px 5px 0px 5px !important;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+span {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.contactLogo{
+    font-size: 1.3em;
+}
+
+.cardFooter {
+    text-align: left;
+}
+
+.companyName {
+    font-weight: bold;
+}
+
+.companyTitle {
+    font-weight: normal;
+}
+
+.companyCatchPhrase {
+    font-style: italic;
+}
+
+.spinner {
+    width: 100px;
+    height: 100px;
+    margin-top: 100px;
+    animation-delay: 2s;
+}
+
+
