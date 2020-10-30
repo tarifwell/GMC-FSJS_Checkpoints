@@ -1,0 +1,11 @@
+Please note:
+------------
+
+In this directory you will find:
+ 1 folder: "mylearnyounode", is a project folder, and
+ 1 compressed file: "mylearnyounode.rar"
+
+Folder doesn't include [node_modules] folder and inner packages.
+The compressed file has the same content as the folder; to use in case of problem to access some files.
+
+Thanks.
