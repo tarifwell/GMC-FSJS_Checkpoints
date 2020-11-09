@@ -1,0 +1,11 @@
+Please note:
+------------
+
+In this directory you will find:
+ 3 folders: these are project folders, and
+ 3 compressed files: ".rar" files
+
+Folders doesn't include [node_modules] folder and inner packages.
+The compressed files have the same content as the folders; to use in case of problem to access some files.
+
+Thanks.

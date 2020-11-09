@@ -1,0 +1,22 @@
+{
+  "name": "weather-api-nodejs",
+  "version": "1.0.0",
+  "description": "Nodejs app to consume openweathermap.org API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "weather",
+    "openweathermap.org",
+    "api"
+  ],
+  "author": "Tarek Arif",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "request": "^2.88.2"
+  }
+}

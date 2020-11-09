@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quel temps fait-il aujourd'hui ?</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <style type="text/css">
+    .jumbotron {
+        margin: 20px;
+        padding: 35px;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .card {margin: auto;}
+
+    .card-title {margin-top: 12px;}
+
+    .card-body {padding: 12px;}
+
+    p {margin-bottom: 7px;}
+    </style>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <section>
+            <header>
+                <h1 class="display-4">Quel temps fait-il ?</h1>
+                <p class="lead">Saisir une ville et cliquez sur le bouton.</p>
+                <hr class="my-4">
+            </header>
+            <article>
+                <form class="form-inline" action="/searchCity/" method="GET">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="cityName" class="sr-only">Nom ville</label>
+                        <input type="text" class="form-control" id="cityName" name="cityName" placeholder="Nom d'une ville"/>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-2" id="submit">Voir Météo</button>
+                </form>
+                <hr class="my-4">
+            </article>
+        </section>
+        <section>
+            <div class="card text-center" style="width: 15rem;">
+                <div class="card-header">
+                    <h5 class="card-title"><%= weather.city %></h5>
+                </div>
+                <div class="card-body">
+                    <img src="http://openweathermap.org/img/w/<%= weather.icon %>.png" class="card-img-top" alt="météo" style="width: 100px">
+                    <div class="card-body">
+                        <p class="card-text"><strong><%= weather.description %></strong></p>
+                        <p class="card-text">Température: <%= weather.temperature %>°C</p>
+                        <p class="card-text">Pression: <%= weather.pressure %> hPa</p>
+                    </div>
+                </div>
+                <div class="card-footer text-muted">
+                    <p class="card-text"><strong>Levée du soleil:</strong> <%= weather.sunrise %></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+</body>
+
+</html>

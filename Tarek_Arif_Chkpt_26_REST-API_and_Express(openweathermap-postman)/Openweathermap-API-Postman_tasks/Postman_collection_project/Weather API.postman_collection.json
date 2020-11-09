@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "fbe5d528-cfb4-4c4b-9aa1-5fdc78f6cdd6",
+		"name": "Weather API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.openweathermap.org/data/2.5/weather?q=London&APPID=73cdefeefdd70f3d75dba2982c12a8bf",
+					"protocol": "http",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London"
+						},
+						{
+							"key": "APPID",
+							"value": "73cdefeefdd70f3d75dba2982c12a8bf"
+						}
+					]
+				},
+				"description": "Get Open weather API"
+			},
+			"response": []
+		},
+		{
+			"name": "API key",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "73cdefeefdd70f3d75dba2982c12a8bf",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "APPID",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.openweathermap.org/data/2.5/weather?q=London",
+					"protocol": "http",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London"
+						}
+					]
+				},
+				"description": "Add API key (APPID)"
+			},
+			"response": []
+		},
+		{
+			"name": "Pass Parameters",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "73cdefeefdd70f3d75dba2982c12a8bf",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "APPID",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.openweathermap.org/data/2.5/weather?q=Tunis&lang=fr&units=metric",
+					"protocol": "http",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Tunis"
+						},
+						{
+							"key": "lang",
+							"value": "fr"
+						},
+						{
+							"key": "units",
+							"value": "metric"
+						}
+					]
+				},
+				"description": "Pass some parameters to the REST API"
+			},
+			"response": []
+		},
+		{
+			"name": "Some cities",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "in",
+							"value": "query",
+							"type": "string"
+						},
+						{
+							"key": "value",
+							"value": "73cdefeefdd70f3d75dba2982c12a8bf",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "APPID",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://api.openweathermap.org/data/2.5/weather?q=Beijing&lang=zh_cn&units=metric",
+					"protocol": "http",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Beijing"
+						},
+						{
+							"key": "lang",
+							"value": "zh_cn"
+						},
+						{
+							"key": "units",
+							"value": "metric"
+						}
+					]
+				},
+				"description": "Get weather of some cities using the API"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
