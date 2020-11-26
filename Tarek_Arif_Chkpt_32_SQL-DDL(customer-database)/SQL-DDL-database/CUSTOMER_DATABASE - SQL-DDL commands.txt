@@ -1,4 +1,5 @@
 -- Creation of MySQL database "CUSTOMER_DATABASE" with SQL DDL language
+-- Use of MySQL Console
 
 -- Based on this relational model
 -- Customer(Customer_id, customer_Name, customer_Tel)
@@ -51,7 +52,7 @@ DESCRIBE Product;
 
 -- Add a column OrderDate (DATE) to the ORDERS table which have SYSDATE as a default value.
 ALTER TABLE Orders ADD COLUMN OrderDate DATE DEFAULT SYSDATE();
-DESCRIBE Product;
+DESCRIBE Orders;
 
 
 -- !IMPORTANT NOTE! : MySQL doesn't accept VARCHAR2(20) and NUMBER data types, instead of them I respectively used VARCHAR(20) and INT.
