@@ -1,0 +1,53 @@
+-- Insertion of some data into MySQL database "CUSTOMER_DATABASE" with SQL-MDL language
+-- Use of MySQL Console
+
+-- Based on the following relational model (previous database)
+-- Customer(Customer_id, customer_Name, customer_Tel)
+-- Product(Product_id, product_name, category, Price)
+-- Orders(#Customer_id, #Product_id, OrderDate, quantity, total_amount)
+
+
+SHOW DATABASES;
+
+USE CUSTOMER_DATABASE;
+
+-- Adding data to 'Customer' table
+DESCRIBE Customer;
+insert into Customer values ('C01', 'ALI', 71321009);
+insert into Customer values ('C02', 'ASMA', 77345823);
+select * from Customer;
+
+
+-- Adding data to 'Product' table
+DESCRIBE Product;
+
+-- I used this concise command ... 
+insert into Product values 
+	('P01', 'Samsung Galaxy S20', 3299, 'Smartphone'),
+	('P02', 'ASUS Notebook', 4599, 'PC');
+
+-- ... instead of theses ones 
+-- insert into Product values ('P01', 'Samsung Galaxy S20', 3299, 'Smartphone');
+-- insert into Product values ('P02', 'ASUS Notebook', 4599, 'PC');
+
+select * from Product;
+
+
+-- Adding data to 'Orders' table
+DESCRIBE Orders;
+insert into Orders values 
+	('C01', 'P02', 2, 9198, NULL),
+	('C02', 'P01', 1, 3299, '28/05/2020');
+
+select * from Orders;
+
+-- I did a mistake: the format of date (in OrderDate column) is incorrect, for that do an update of that value with the use of 'UPDATE' command:
+update Orders set OrderDate='2020-05-28' where total_amount=3299;
+select * from Orders;
+
+
+-- !IMPORTANT NOTE! : After the use of 'DESCRIBE' I notice that attributes (Columns) haven't the same order like in the examples of instructions. For that, I changed the order of data elements according to MySQL tables (for example 'Price' is not the last data like in the instructions, and 'OrderData' is in the last one not in the middle);
+
+
+
+

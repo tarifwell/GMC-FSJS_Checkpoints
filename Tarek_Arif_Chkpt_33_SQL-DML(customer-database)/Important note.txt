@@ -1,0 +1,3 @@
+-- I used MySQL from XAMP v3.2.4 to do the tasks.
+
+-- !IMPORTANT NOTE! : After the use of 'DESCRIBE' I notice that attributes (Columns) haven't the same order like in the examples of instructions. For that, I changed the order of data elements according to MySQL tables (for example 'Price' is not the last data like in the instructions, and 'OrderData' is in the last one not in the middle);
