@@ -1,0 +1,3 @@
+-- I used MySQL from XAMP v3.2.4 to do the tasks.
+
+-- !IMPORTANT NOTE! : MySQL doesn't accept VARCHAR2(20) and NUMBER data types, instead of them I respectively used VARCHAR(20) and INT.

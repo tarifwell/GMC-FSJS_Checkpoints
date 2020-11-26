@@ -1,0 +1,61 @@
+-- Creation of MySQL database "CUSTOMER_DATABASE" with SQL DDL language
+
+-- Based on this relational model
+-- Customer(Customer_id, customer_Name, customer_Tel)
+-- Product(Product_id, product_name, Price)
+-- Orders(#Customer_id, #Product_id, quantity, total_amount)
+
+-- Creation of database
+CREATE DATABASE CUSTOMER_DATABASE;
+
+SHOW DATABASES;
+
+USE CUSTOMER_DATABASE;
+
+
+-- Creation of three tables 'Customer', 'Product' and 'Orders'
+create table Customer(
+Customer_id VARCHAR(20) primary key NOT NULL, 
+customer_Name VARCHAR(20) NOT NULL, 
+customer_Tel INT
+);
+
+DESCRIBE Customer;
+
+-- Price must be a Positive value
+create table Product(
+Product_id VARCHAR(20) primary key, 
+product_name VARCHAR(20) NOT NULL, 
+Price INT CHECK(Price >0) 
+);
+
+DESCRIBE Product;
+
+-- This table has two foreign key
+create table Orders(
+Customer_id VARCHAR(20), 
+Product_id  VARCHAR(20),
+quantity INT DEFAULT 0, 
+total_amount INT,
+CONSTRAINT PK_Orders primary key(Customer_id, Product_id),
+foreign key(Customer_id) REFERENCES Customer(Customer_id),
+foreign key(Product_id) REFERENCES Product(Product_id)
+);
+
+DESCRIBE Orders;
+
+
+-- Add a column Category (VARCHAR2(20)) to the Product table
+ALTER TABLE Product ADD COLUMN Category VARCHAR(20);
+DESCRIBE Product;
+
+-- Add a column OrderDate (DATE) to the ORDERS table which have SYSDATE as a default value.
+ALTER TABLE Orders ADD COLUMN OrderDate DATE DEFAULT SYSDATE();
+DESCRIBE Product;
+
+
+-- !IMPORTANT NOTE! : MySQL doesn't accept VARCHAR2(20) and NUMBER data types, instead of them I respectively used VARCHAR(20) and INT.
+
+
+
+
