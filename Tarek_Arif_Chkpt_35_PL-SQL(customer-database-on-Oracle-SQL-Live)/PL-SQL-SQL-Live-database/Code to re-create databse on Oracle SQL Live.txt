@@ -1,0 +1,62 @@
+-- Replication of the database
+
+-- Due to incompatibility between PL/SQL and MySQL database I migrate to Oracle SQL Live.
+-- I replicate all the previous tables and data on Oracle Live SQL project
+
+-- Creation of 3 tables named 'Customer', 'Product' and 'Orders' 
+
+create table Customer(
+    Customer_id VARCHAR2(20) primary key NOT NULL, 
+    customer_Name VARCHAR2(20) NOT NULL, 
+    customer_Tel Number(8)
+);
+
+create table Product(
+    Product_id VARCHAR2(20) primary key, 
+    product_name VARCHAR2(20) NOT NULL, 
+    Price NUMBER CHECK(Price >0),
+    category VARCHAR2(20)
+);
+
+create table Orders (
+    Customer_id varchar2(20),
+    Product_id varchar2(20),
+    quantity number,
+    total_amount number,
+    OrderDate date
+);
+
+ALTER TABLE Orders
+ADD FOREIGN KEY (Customer_id) REFERENCES Customer(Customer_id);
+ALTER TABLE Orders
+ADD FOREIGN KEY (Product_id) REFERENCES Product(Product_id);
+alter table Orders
+add constraint orders_pk primary key (Customer_id, Product_id);/
+
+
+
+-- Inserting new (given) records into the 3 tables
+
+insert into Customer values ('C01', 'ALI', 71321009);
+insert into Customer values ('C02', 'ASMA', 77345823);
+
+insert into Product values ('P01', 'Samsung Galaxy S20', 3299, 'Smartphone');
+insert into Product values ('P02', 'ASUS Notebook', 4599, 'PC');
+
+insert into Orders values ('C01', 'P02', 2, 9198, NULL);
+-- insert into Orders values ('C02', 'P01', 1, 3299, '2020-05-28');
+insert into Orders values ('C02', 'P01', 1, 3299, TO_DATE('28/05/2020', 'DD/MM/YYYY'));
+
+
+
+-- Showing content of tables by selecting all data fields
+
+SELECT * FROM Customer;
+SELECT * FROM Product;
+SELECT * FROM Orders;
+
+
+-- !IMPORTANT NOTE! : Because of the incompatibility of PL/SQL with MySQL databases, and the necessity tu use PL/SQL in the training course. I had to rewrite everything with Oracle SQL syntax and to use online application Oracle SQL Live to achieve tasks.
+
+
+

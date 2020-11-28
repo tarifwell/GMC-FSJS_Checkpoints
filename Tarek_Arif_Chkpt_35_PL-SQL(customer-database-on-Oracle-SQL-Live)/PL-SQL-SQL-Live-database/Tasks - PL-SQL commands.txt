@@ -1,0 +1,95 @@
+-- Manipulation of the PL/SQL language: cursor, procedure, function, exception and triggers
+-- Use of Oracle SQL Live website
+
+-- Based on the following relational modal
+-- Customer(Customer_id, customer_Name, customer_Tel)
+-- Product(Product_id, product_name, Category, Price)
+-- Orders(#Customer_id, #Product_id, OrderDate, quantity, total_amount)
+
+
+1. Create a PL/SQL block which displays the list of customers (all the informations)
+
+DECLARE
+    CURSOR cur IS SELECT * FROM Customer;
+BEGIN
+    FOR rec IN cur LOOP
+        dbms_output.put_line('Name: ' || rec.customer_Name || ' - Tel: ' || rec.customer_Tel);
+    END LOOP;
+END;
+
+
+2. Create a Procedure PS_Customer_Prodcuts which displays the list of product names of a given customer (customer_id). If no result returned (No_Data_Found exception raised), display the following message “No products returned or customer not found”
+
+CREATE OR REPLACE PROCEDURE PS_Customer_Prodcuts(given_id Customer.Customer_id%TYPE) IS
+    CURSOR cur IS SELECT Product.product_Name FROM Orders
+    INNER JOIN Customer ON Orders.Customer_id = Customer.Customer_id
+    INNER JOIN Product ON Orders.Product_id = Product.Product_id
+    WHERE Customer.Customer_id = given_id;
+BEGIN
+    FOR rec IN cur LOOP
+        dbms_output.put_line('Name:' || rec.product_Name);
+    END LOOP;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        dbms_output.put_line('No products returned or customer not found');
+END;
+/
+
+BEGIN
+    PS_Customer_Prodcuts('C02');
+    PS_Customer_Prodcuts('C01');
+END;
+/
+
+
+3. Create a Function FN_Customer_Orders which returns the number of orders of a given customer (customer_id).
+
+CREATE OR REPLACE FUNCTION FN_Customer_Orders(given_id Orders.Customer_id%TYPE) 
+    RETURN NUMBER IS
+        nb_orders NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO nb_orders FROM Orders 
+    INNER JOIN Customer ON Orders.Customer_id = Customer.Customer_id
+    WHERE Customer.Customer_id = given_id;
+    RETURN nb_orders;
+END;
+/
+
+DECLARE
+    x VARCHAR2(20);
+    nb NUMBER;
+BEGIN
+    x := 'C02';
+    nb := FN_Customer_Orders(x);
+    dbms_output.put_line('There are ' || nb || ' product orders of ' || x || ' customer.');
+END;
+/
+
+
+4. Create a trigger TRIG_INS_ORDERS which starts before each INSERT on Orders tables and test if the OrderDate >= SYSDATE. If not the following message is displayed “Order Date must be greater than or equal to today's date”
+
+
+CREATE OR REPLACE TRIGGER TRIG_INS_ORDERS
+    BEFORE INSERT
+    ON Orders
+    FOR EACH ROW
+BEGIN
+    IF ( :NEW.OrderDate < SYSDATE ) THEN
+        dbms_output.put_line('Order Date must be greater than or equal to today s date');
+    END IF;
+END;
+/
+
+INSERT INTO Orders(OrderDate) values (TO_DATE('30/12/2020', 'DD/MM/YYYY'));
+INSERT INTO Orders(OrderDate) values (TO_DATE('04/03/2015', 'DD/MM/YYYY'));
+
+
+
+
+
+
+
+
+
+
+

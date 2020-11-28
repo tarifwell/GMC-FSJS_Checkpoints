@@ -1,0 +1,3 @@
+-- I used Oracle SQL Live to do the tasks.
+
+-- !IMPORTANT NOTE! : Because of the incompatibility of PL/SQL with MySQL databases, and the necessity tu use PL/SQL in the training course. I had to rewrite everything with Oracle SQL syntax and to use online application Oracle SQL Live to achieve tasks.
