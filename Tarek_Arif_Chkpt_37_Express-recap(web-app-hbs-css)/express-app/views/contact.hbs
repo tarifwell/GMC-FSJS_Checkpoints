@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express Web APP / Contact</title>
+    <link rel="stylesheet" href="{{style}}" />
+    <link rel="stylesheet" href="{{contactStyle}}" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Roboto+Slab:wght@800&display=swap" />
+  </head>
+  <body>
+    <header>
+      <h1>Express<span>WebAPP</span></h1>
+      <nav>
+        <ul>
+          <li><a href="http://localhost:{{port}}/home">Accueil</a></li>
+          <li><a href="http://localhost:{{port}}/services">Nos services</a></li>
+          <li><a href="http://localhost:{{port}}/contact">Contactez-nous</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="centralBox">
+      <h2>Formulaire<span>de contact</span></h2>
+      <form action="#" method="GET">
+        <div>
+          <label for="firstName">Nom :</label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="Votre nom"
+          />
+        </div>
+        <div>
+          <label for="lastName">Prénom :</label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            placeholder="Votre prénom"
+          />
+        </div>
+        <div>
+          <label for="mail">e-mail :</label>
+          <input
+            type="email"
+            id="mail"
+            name="mail"
+            placeholder="Votre e-mail"
+          />
+        </div>
+        <div>
+          <label for="phone">Téléphone :</label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            placeholder="(+216) 000.000"
+          />
+        </div>
+        <div>
+          <label for="msg">Message :</label>
+          <textarea
+            id="msg"
+            name="msg"
+            placeholder="Votre commentaire..."
+          ></textarea>
+        </div>
+        <div class="button">
+          <button type="submit">Envoyer votre message</button>
+        </div>
+      </form>
+    </section>
+    <footer></footer>
+  </body>
+</html>
