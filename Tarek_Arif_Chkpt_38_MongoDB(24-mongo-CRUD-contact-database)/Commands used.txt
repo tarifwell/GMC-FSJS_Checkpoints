@@ -1,0 +1,59 @@
+
+
+
+24-mongo CRUD Checkpoint
+-------------------------
+
+// Commands used to do each task
+
+	> show dbs
+
+	1• Create a database called "contact"
+		>	use contact;
+	2• Create a collection called "contactlist"
+		>	db.createCollection('contactList');
+
+	3• Insert 3 persons in "contactlist" :
+		>	db.contactList.insertMany([
+				{lastName: 'Ben Lahmer', firstName: 'Fares', eMail: 'fares@gmail.com',age:26},
+				{lastName: 'Kefi', firstName: 'Seif', eMail: 'kefi@gmail.com', age:15},
+				{lastName: 'Fatnassi', firstName: 'Sarra', eMail: 'sarra.f@gmail.com', age:40},
+				{lastName: 'Ben Yahia', firstName: 'Rym', age:4},
+				{lastName: 'Cherif', firstName: 'Sami', age:3}
+			]);
+		
+	4• Display all the contact list
+		>	db.contactList.find().pretty();
+
+	5• Display all the information about only one person using his id
+		>	db.contactList.find({ "_id" : ObjectId("5fcc3bb11626f39809b5ab98")});
+		>	db.contactList.find({ "_id" : ObjectId("5fcc3bb11626f39809b5ab98")}).pretty();
+
+	6• Display all the contact list having age>18
+		>	db.contactList.find({age: {$gt: 18}});
+		>	db.contactList.find({age: {$gt: 18}}).pretty();
+
+	7• Display all the contact list having age>18 and name containing "ah"
+		>	db.contactList.find({ $and: [{ age: {$gt: 18}}, {lastName: /ah/} ]});
+		>	db.contactList.find({ $and: [{ age: {$gt: 18}}, {lastName: /ah/} ]}).pretty();
+
+	8• Change the contact first name of "kefi Seif" by "Kefi Anis"
+		>	db.contactList.update({lastName: 'Kefi'}, {$set: {firstName: "Anis"}});
+		>	db.contactList.find().pretty();
+
+
+	9• Delete the contact list having age < 5
+		>	db.contactList.remove({age: {$lt: 5}});
+		>	db.contactList.find();
+		>	db.contactList.find().pretty();
+		
+	10• Display all the contact list
+		>	db.contactList.find();
+		>	db.contactList.find().pretty();
+
+
+// NB : veiw the screenshots to see the results.
+
+
+
+

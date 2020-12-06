@@ -1,0 +1,41 @@
+
+
+
+24-mongo CRUD Checkpoint
+-------------------------
+
+// INSTRUCTIONS 
+
+
+// The purpose of this checkpoint is to manipulate mongo CRUD operations
+		 1• Create a database called "contact"
+ 
+		 2• Create a collection called "contactlist"
+		 
+		 3• Insert 3 persons in "contactlist" :
+				◦ Last name: Ben Lahmer, First name: Fares, Email: fares@gmail.com,age:26
+				◦ Last name: Kefi, First name: Seif, Email: kefi@gmail.com, age:15
+				◦ Last name: Fatnassi, First name: Sarra, Email: sarra.f@gmail.com, age:40
+				◦ Last name: Ben Yahia, First name: Rym, age:4
+				◦ Last name: Cherif, First name: Sami, age:3
+				
+		 4• Display all the contact list
+		 
+		 5• Display all the information about only one person using his id
+		 
+		 6• Display all the contact list having age>18
+		 
+		 7• Display all the contact list having age>18 and name containing "ah"
+		 
+		 8• Change the contact first name of "kefi Seif" by "Kefi Anis"
+		 
+		 9• Delete the contact list having age < 5
+		
+ •=>10• Display all the contact list
+
+
+
+// NB : You have to save your work as screenshots
+
+
+
