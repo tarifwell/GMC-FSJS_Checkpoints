@@ -8,4 +8,4 @@ In this directory you will find:
 Folder doesn't include [node_modules] directory and inner packages.
 The compressed file has the same content as the folder; to use in case of problem to access some files.
 
-Thanks...
+Thanks.
